@@ -4,7 +4,7 @@ import com.sajjad.earthquakeapi.models.EarthQuakeModel
 import com.sajjad.earthquakeapi.network.NetworkService
 
 class EarthQuakeRepository {
-    suspend fun fetchCurrentData(startTime:String,endTime:String,unit:String): EarthQuakeModel {
+    suspend fun fetchCurrentData(startTime:String,endTime:String,unit:Int): EarthQuakeModel {
         val endUrl =
             "query?format=geojson&starttime=$startTime&endtime=$endTime&minmagnitude=$unit"
         print(endUrl)

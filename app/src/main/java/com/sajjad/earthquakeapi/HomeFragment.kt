@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sajjad.earthquakeapi.adapter.EarthQuakeAdapter
@@ -21,7 +22,7 @@ class HomeFragment : Fragment() {
     private val earthquakeViewModel: EarthQuakeViewModel by activityViewModels()
     private var fromSelectedDate = "2022-01-20"
     private var toSelectedDate = "2022-06-15"
-    private var unit = "5"
+    private var unit = 5
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,7 +62,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initUnitSpinner() {
-        val unitAdapter = ArrayAdapter<String>(
+        val unitAdapter = ArrayAdapter<Int>(
             requireActivity(),
             R.layout.simple_spinner_dropdown_item,
             unitList
@@ -72,7 +73,7 @@ class HomeFragment : Fragment() {
 
             object : AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                    unit = p0?.getItemAtPosition(p2).toString()
+                    unit = p0?.getItemAtPosition(p2) as Int
                 }
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -84,4 +85,4 @@ class HomeFragment : Fragment() {
 
 }
 
-val unitList = listOf("1","2","3","4","5","6","7","8")
+val unitList = listOf(2,3,4,5,6,7,8)

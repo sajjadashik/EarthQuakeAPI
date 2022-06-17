@@ -13,7 +13,7 @@ class EarthQuakeViewModel : ViewModel() {
 
     val earthquakeLiveData: MutableLiveData<EarthQuakeModel> = MutableLiveData()
 
-    fun fetchData(fromDate:String, toDate:String,unit:String) {
+    fun fetchData(fromDate:String, toDate:String,unit:Int) {
         viewModelScope.launch {
             try {
                 earthquakeLiveData.value = repository.fetchCurrentData(fromDate,toDate,unit)
