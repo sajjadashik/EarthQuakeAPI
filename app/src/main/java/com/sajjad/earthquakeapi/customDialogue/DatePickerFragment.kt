@@ -1,4 +1,4 @@
-package com.tanvir.training.actioninputsbatch04.customdialogs
+package com.sajjad.earthquakeapi.customDialogue
 
 import android.app.DatePickerDialog
 import android.app.Dialog

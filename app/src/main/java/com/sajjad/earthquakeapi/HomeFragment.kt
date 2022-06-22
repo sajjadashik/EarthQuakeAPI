@@ -9,13 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sajjad.earthquakeapi.adapter.EarthQuakeAdapter
+import com.sajjad.earthquakeapi.customDialogue.DatePickerFragment
 import com.sajjad.earthquakeapi.databinding.FragmentHomeBinding
 import com.sajjad.earthquakeapi.viewomodels.EarthQuakeViewModel
-import com.tanvir.training.actioninputsbatch04.customdialogs.DatePickerFragment
 
 class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding
@@ -23,6 +22,10 @@ class HomeFragment : Fragment() {
     private var fromSelectedDate = "2022-01-20"
     private var toSelectedDate = "2022-06-15"
     private var unit = 5
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
