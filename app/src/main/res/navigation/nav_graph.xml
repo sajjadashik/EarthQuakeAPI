@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.sajjad.earthquakeapi.HomeFragment"
-        android:label="fragment_home"
+        android:label="Information"
         tools:layout="@layout/fragment_home" />
 </navigation>
